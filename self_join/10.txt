@@ -1,0 +1,12 @@
+SELECT a.num,a.company,stopm.name,c.num,c.company
+FROM route a
+JOIN route b
+ON (a.company=b.company AND a.num=b.num)
+JOIN stops stopm
+ON a.stop=stopm.id
+JOIN route c
+ON c.stop=stopm.id
+JOIN route d
+ON (c.company=d.company AND c.num=d.num)
+WHERE b.stop=(SELECT id FROM stops WHERE name='Craiglockhart')
+AND d.stop=(SELECT id FROM stops WHERE name='Lochend')

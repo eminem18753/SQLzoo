@@ -1,0 +1,5 @@
+SELECT g.mdate,e.teamname
+FROM game g
+JOIN eteam e
+ON g.team1=e.id
+WHERE e.coach='Fernando Santos'

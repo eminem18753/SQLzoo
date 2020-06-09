@@ -1,0 +1,5 @@
+SELECT g1.stadium,COUNT(*)
+FROM game g1
+JOIN goal g2
+ON g1.id=g2.matchid
+GROUP BY g1.stadium

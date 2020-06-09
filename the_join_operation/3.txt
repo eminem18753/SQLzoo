@@ -1,0 +1,2 @@
+SELECT g2.player,g2.teamid,g1.stadium,g1.mdate
+  FROM game g1 JOIN goal g2 ON g1.id=g2.matchid WHERE g2.teamid='GER'

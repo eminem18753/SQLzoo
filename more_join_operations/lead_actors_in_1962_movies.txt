@@ -1,0 +1,7 @@
+SELECT m.title,a.name
+FROM movie m
+JOIN casting c
+ON c.movieid=m.id
+JOIN actor a
+ON c.actorid=a.id
+WHERE m.yr=1962 AND c.ord=1

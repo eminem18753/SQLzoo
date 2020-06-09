@@ -1,0 +1,2 @@
+SELECT COUNT(DISTINCT stop)
+FROM route

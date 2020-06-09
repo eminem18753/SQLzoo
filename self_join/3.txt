@@ -1,0 +1,5 @@
+SELECT s.id,s.name
+FROM route r
+JOIN stops s
+ON r.stop=s.id
+WHERE r.num='4' AND r.company='LRT'

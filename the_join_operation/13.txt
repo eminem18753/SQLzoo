@@ -1,0 +1,9 @@
+SELECT mdate,team1,SUM(score1),team2,SUM(score2)
+FROM
+(SELECT g1.mdate as mdate,g1.team1 as team1,
+  CASE WHEN g2.teamid=g1.team1 THEN COUNT(*) ELSE 0 END score1,g1.team2 as team2,
+  CASE WHEN g2.teamid=g1.team2 THEN COUNT(*) ELSE 0 END score2
+  FROM game g1 LEFT JOIN goal g2 ON g2.matchid = g1.id
+  GROUP BY g1.mdate,g1.team1,g1.team2,g2.teamid
+  ORDER BY g1.mdate,g2.matchid,g1.team1,g1.team2) result
+GROUP BY mdate,team1,team2

@@ -1,0 +1,6 @@
+SELECT g1.id,g1.mdate,COUNT(*)
+FROM game g1
+JOIN goal g2
+ON g1.id=g2.matchid
+WHERE (g1.team1='GER' OR g1.team2='GER') AND g2.teamid='GER'
+GROUP BY g1.id,g1.mdate 

@@ -1,0 +1,4 @@
+SELECT t.name,CASE WHEN d.id=1 OR d.id=2 THEN 'Sci' ELSE 'Art' END
+FROM teacher t
+LEFT JOIN dept d
+ON t.dept=d.id

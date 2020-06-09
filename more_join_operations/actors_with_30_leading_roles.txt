@@ -1,0 +1,9 @@
+SELECT a.name
+FROM movie m
+JOIN casting c
+ON m.id=c.movieid
+JOIN actor a
+ON c.actorid=a.id
+WHERE c.ord=1
+GROUP BY a.name
+HAVING COUNT(c.actorid)>=30

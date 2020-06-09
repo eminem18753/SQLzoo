@@ -1,0 +1,3 @@
+SELECT *
+FROM nobel
+WHERE yr=1980 AND Subject NOT IN ('Chemistry','Medicine')

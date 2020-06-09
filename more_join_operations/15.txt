@@ -1,0 +1,7 @@
+SELECT DISTINCT a.name
+FROM movie m
+JOIN casting c
+ON m.id=c.movieid
+JOIN actor a
+ON c.actorid=a.id
+WHERE c.actorid IN (SELECT actorid FROM casting WHERE movieid IN (SELECT movieid FROM movie m1 JOIN casting c1 ON m1.id=c1.movieid JOIN actor a1 ON c1.actorid=a1.id WHERE a1.name='Art Garfunkel')) AND a.name<>'Art Garfunkel'

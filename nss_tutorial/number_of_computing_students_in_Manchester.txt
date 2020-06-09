@@ -1,0 +1,12 @@
+SELECT institution,SUM(sample),
+(SELECT SUM(sample)
+  FROM nss n1
+ WHERE question='Q01'
+   AND n1.institution=n2.institution
+   AND (institution LIKE '%Manchester%')
+   AND subject='(8) Computer Science'
+ GROUP BY institution)
+  FROM nss n2
+ WHERE question='Q01'
+   AND (institution LIKE '%Manchester%')
+ GROUP BY institution

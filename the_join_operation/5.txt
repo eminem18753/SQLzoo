@@ -1,0 +1,4 @@
+SELECT player, teamid, coach, gtime
+  FROM goal g
+  JOIN eteam e ON g.teamid=e.id
+  WHERE gtime<=10

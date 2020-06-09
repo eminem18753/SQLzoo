@@ -1,0 +1,3 @@
+SELECT DISTINCT player
+  FROM game g1 JOIN goal g2 ON g2.matchid = g1.id 
+    WHERE (g1.team1='GER' OR g1.team2='GER') AND g2.teamid<>'GER'

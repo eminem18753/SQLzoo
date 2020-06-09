@@ -1,0 +1,4 @@
+SELECT name,continent
+FROM world w1
+WHERE population>3*(SELECT MAX(population) FROM world w2 WHERE w1.continent=w2.continent AND w1.name<>w2.name GROUP BY w1.continent)
+ORDER BY name

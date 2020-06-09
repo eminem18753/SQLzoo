@@ -1,0 +1,3 @@
+SELECT g1.team1,g1.team2,g2.player
+FROM game g1 JOIN goal g2 ON g1.id=g2.matchid
+WHERE g2.player LIKE 'Mario%'

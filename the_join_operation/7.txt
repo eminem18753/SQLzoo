@@ -1,0 +1,5 @@
+SELECT player
+FROM goal g1
+JOIN game g2
+ON g1.matchid=g2.id
+WHERE g2.stadium='National Stadium, Warsaw'
